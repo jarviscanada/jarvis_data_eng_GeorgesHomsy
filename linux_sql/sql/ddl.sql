@@ -1,5 +1,3 @@
-#!/bin/bash
-
 \c host_agent;
 
 
