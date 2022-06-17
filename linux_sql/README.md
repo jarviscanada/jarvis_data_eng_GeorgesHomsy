@@ -79,4 +79,4 @@ psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
 2. `queries.sql`: List of queries for answering many buiness questions.
 
 ## Architecture
-![This is an image](/assets/images/j.png)
+![This is an image](/assets/j.png)
