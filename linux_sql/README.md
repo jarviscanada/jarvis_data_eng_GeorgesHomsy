@@ -1,5 +1,4 @@
 # Linux Cluster Monitoring Agent
-This project is under development. Since this project follows the GitFlow, the final work will be merged to the main branch after Team Code Team.
 
 ## About this project
 The linux monitoring agent is used by LCA (Linux cluster administration) to monitor and record the hardware and usage of (CPU/Memory) in real time for all the Linux servers running on `CentOS 7` distro and hosted on `GCP` (Google cloud platform). All the data is saved every minute in a relational database . The servers are all connected through a switch. All the data will be used for reporting purpose mainly to manage all the infrastructure in case they need to add or remove any server or to get more powerful cpu or memory. So it's very important to check that all the data collected by the agent is correct and meeting the need of the LCU.
@@ -18,7 +17,46 @@ The linux monitoring agent is used by LCA (Linux cluster administration) to moni
 * Scum
 * GitFlow
 
-## Quick Start
+## Architecture
+![This is an image](assests/j.png)
+
+## Database Modeling
+In this project we have 2 tables **host_info** and **host_usage**
+
+<details><summary>host_info model</summary>
+<p>
+  
+  * `id`: It's the primary key of the table. Serial field so it's auto generate number. -> SERIAL PRIMARY KEY NOT NULL
+  * `host_name`: VARCHAR UNIQUE NOT NULL
+  * `cpu_number`:	INT NOT NULL
+  * `cpu_architecture`:	VARCHAR NOT NULL
+  * `cpu_model`:	VARCHAR	NOT NULL
+  * `cpu_mhz`:		FLOAT(4) NOT NULL
+  * `L2_cache`:	INT NOT NULL
+  * `total_mem`: INT NOT NULL
+  * `timestamp`:	TIMESTAMP NOT NULL
+  
+</p>
+</details>
+
+<details><summary>host_usage model</summary>
+<p>
+  
+  * `timestamp`:	TIMESTAMP NOT NULL
+  * `host_id`:		INT NOT NULL
+  * `memory_free`:	INT NOT NULL
+  * `cpu_idle`:	INT NOT NULL
+  * `cpu_kernel`:	INT NOT NULL
+  * `disk_io`:		INT NOT NULL
+  * `disk_available`:	INT NOT NULL
+
+	CONSTRAINT fk_host_id FOREIGN KEY (host_id) REFERENCES host_info(id): this is a constraint to indicate that host_id is a foreign key to id the primary key 
+  in the table host_info
+  
+</p>
+</details>
+
+## Usage
 My project is divides into 2 folders:
 * Scripts: contains all bash scripts `.sh`
 * SQL: contains all sql file `.sql`
@@ -78,5 +116,26 @@ psql -h localhost -U postgres -d host_agent -f sql/ddl.sql
 ```
 2. `queries.sql`: List of queries for answering many buiness questions.
 
-## Architecture
-![This is an image](assests/j.png)
+## Test
+All the bash scripts are developed in a way that if any error occured it will stop the normal execution and indicate the error. So, once any error occur in a bash file we usually execute the bash file with `bash +x` command for debbuging. If not we compare the input with the result by using bash command. For the:
+
+* `psql_docker`: Like we mentioned above this script is responsable of managing `psql` instance. So once we execute the script if no error, to verify that we got the expected result we can verify if the postgres container was created and running by typing:
+```bash
+ docker ps -f name=nameofthecontainer
+```
+* `ddl.sql`: We can verify by checking the `host_agent` database if the tables were created by using `\dt`.
+
+* `host_info.sf` and `host_usage.sh`: We can verify by using `select` queries and check if they return records.
+
+* `crontab`: We can verify the results in 2 ways:
+  * By verifying the inserted record in the databse
+  * By typing `cron -ls` to view all the crontab jobs
+
+## Improvements
+1. We should create a script with crontab to backup `host_agent` database each day.
+2. Add a reporting tool to present the data in a better way
+
+
+
+
+
