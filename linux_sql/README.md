@@ -4,8 +4,7 @@
 The linux monitoring agent is used by LCA (Linux cluster administration) to monitor and record the hardware and usage of (CPU/Memory) in real time for all the Linux servers running on `CentOS 7` distro and hosted on `GCP` (Google cloud platform). All the data is saved every minute in a relational database . The servers are all connected through a switch. All the data will be used for reporting purpose mainly to manage all the infrastructure in case they need to add or remove any server or to get more powerful cpu or memory. So it's very important to check that all the data collected by the agent is correct and meeting the need of the LCU.
 
 
-
-### Technologies used:
+### Technologies used
 * Bash commands
 * Bash script
 * Docker
@@ -13,7 +12,7 @@ The linux monitoring agent is used by LCA (Linux cluster administration) to moni
 * GCP
 * GitHub
 
-### Methodologies used:
+### Methodologies used
 * Scum
 * GitFlow
 
@@ -123,7 +122,7 @@ All the bash scripts are developed in a way that if any error occured it will st
 ```bash
  docker ps -f name=nameofthecontainer
 ```
-* `ddl.sql`: We can verify by checking the `host_agent` database if the tables were created by using `\dt`.
+* `ddl.sql`: We can verify by checking the `host_agent` database if the tables were created by using `\dt` which return a listing of all the tables.
 
 * `host_info.sf` and `host_usage.sh`: We can verify by using `select` queries and check if they return records.
 
