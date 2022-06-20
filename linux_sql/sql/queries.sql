@@ -9,7 +9,7 @@ order by total_mem DESC;
 /* 2nd query */
 select hu.host_id,hi.hostname,
        date_trunc('hour', hu.timestamp) + date_part('minute', hu.timestamp):: int / 5 * interval '5 min' as "timestamp",
-       avg((hi.total_mem-hu.memory_free)) as avg_used_mem_percentage
+       avg((hi.total_mem-hu.memory_free)*100/hi.total_mem) as avg_used_mem_percentage
 from host_usage hu
 join host_info hi on hu.host_id = hi.id
 group by hu.host_id,hi.hostname, date_trunc('hour', hu.timestamp) + date_part('minute', hu.timestamp):: int / 5 * interval '5 min'
