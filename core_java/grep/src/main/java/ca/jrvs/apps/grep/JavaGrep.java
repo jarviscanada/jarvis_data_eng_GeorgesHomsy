@@ -17,7 +17,7 @@ public interface JavaGrep {
    * @param rootDir input directory
    * @return files under the rootDir
    */
-  List<File> listFiles (String rootDir);
+  List<File> listFiles (String rootDir) throws IOException;
 
   /**
    * Read a file and return all the lines
@@ -28,7 +28,7 @@ public interface JavaGrep {
    * @return lines
    * @throws IllegalArgumentException if a given inputFile is not a file
    */
-  List<String> readLines (File inputFile);
+  List<String> readLines (File inputFile) throws IOException;
 
   /**
    * check if a line contains the regex pattern (passed by user)
