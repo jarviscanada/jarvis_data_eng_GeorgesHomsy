@@ -40,7 +40,7 @@ It uses a lot of memory to perform each tasks. So, to prevent facing these issue
 
 ## Test
 All testing was manual. To test the app:
-  1. Creating a text file containing poetry from Shakespeare. [View file](core_java/grep/data/txt/shakespeare.txt)
+  1. Creating a text file containing poetry from Shakespeare. [View file](/data/txt/shakespeare.txt)
   2. Testing each function separately using Intellij debugger.
   3. Running the application using different arguments to handle all the expected errors.
   4. On the other hand, use the `grep` linux command with the same arguments and compare the output file from IDE and what printed in command line.
