@@ -104,6 +104,7 @@ public class JavaGrepLambdaImp implements JavaGrep{
     if (args.length != 3) {
       throw new IllegalArgumentException("USAGE: JavaGrep regex rootPath outFile");
     }
+
     BasicConfigurator.configure();
     JavaGrepLambdaImp javaGrepImp = new JavaGrepLambdaImp();
     javaGrepImp.setRegex(args[0]);
