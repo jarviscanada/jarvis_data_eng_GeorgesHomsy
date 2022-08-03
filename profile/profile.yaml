@@ -89,11 +89,14 @@ education:
   - school_name: "Université Saint Joseph de Beyrouth"
     duration: "2013-2016"
     degree: "Bachelor of Computer Science applied to business management"
+    department: "Computer Science"
+    awards_achievements:
 
   - school_name: "Université Saint Joseph de Beyrouth"
     duration: "2016-2018"
     degree: "Master’s of Computer Science applied to business management"
-
+    department: "Computer Science"
+    awards_achievements:
 #Optional section
 others:
     #category

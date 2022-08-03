@@ -1,0 +1,124 @@
+{
+  "education": [
+    {
+      "awards_achievements": null,
+      "degree": "Bachelor of Computer Science applied to business management",
+      "department": "Computer Science",
+      "duration": "2013-2016",
+      "school_name": "Université Saint Joseph de Beyrouth"
+    },
+    {
+      "awards_achievements": null,
+      "degree": "Master’s of Computer Science applied to business management",
+      "department": "Computer Science",
+      "duration": "2016-2018",
+      "school_name": "Université Saint Joseph de Beyrouth"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_GeorgesHomsy",
+  "highlighted_projects": [
+    {
+      "description": "Developed and implemented a web application for a movie store using PHP technologies with WAMP server.",
+      "name": "Web app for movie store"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Implemented a Linux monitoring agent used by LCA (Linux cluster administration) to monitor and record the hardware and usage of (CPU/Memory) in real-time for all the Linux servers running on CentOS 7 distro and hosted on GCP (Google cloud platform). The data that is collected includes hardware specifications, activity, and performances of machines in the cluster. All the data is saved every minute using crontab and Bash scripts in a relational database (PostgreSQL) provisioned using Docker. The servers are all connected through a switch. All the data will be used for reporting purposes mainly to manage all the infrastructure in case they need to add or remove any server or to get a more powerful CPU or memory. We choose Git as a version control system to manage the code and we followed GitFlow as a branching strategy.",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": [
+        "Twitter App: ",
+        "JDBC App: Developed an application that manages retail store data within a database. In other words, the application is connected through JDBC (Java Database Connection) driver to a Docker instance of Postgres psql. The application is responsible to provide create, read, update and delete (CRUD) functions for data persistence. These operations were implemented by using structural patterns DAO (Data Access Object) and DTO (Data Transfer Object) that allows us to isolate the application layer from the persistence layer using an abstract API.",
+        "Grep App: Developed an application that is similar to the grep command of Linux. The Grep command in Linux is used to search text in a given file. This application accepts 3 arguments: path where to search / text to search/path of the output file where all matches are saved. The text to search for could be a letter, word or a regular expression. It goes through files recursively in the directory passed by the user as the first argument and then returns strings that match the input pattern (second argument) and save them in a file passed by the user as third arguments. The application is written in Java8 and I used IntelliJ as an IDE. I use maven as a project management tool which also helps me to handle all dependencies and the automation of the project's life cycle. For the deployment, I used Docker to create a docker image of the app, and then I pushed it to DockerHub for easier distribution. This application was implemented in 2 ways: using the for/loop and using the lambda/Stream API."
+      ],
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
+    },
+    {
+      "description": "",
+      "git_url": "/springboot",
+      "name": "Springboot App"
+    },
+    {
+      "description": "",
+      "git_url": "/python_data_analytics",
+      "name": "Python Data Analytics"
+    },
+    {
+      "description": "",
+      "git_url": "/hadoop",
+      "name": "Hadoop"
+    },
+    {
+      "description": "",
+      "git_url": "/spark",
+      "name": "Spark"
+    },
+    {
+      "description": "",
+      "git_url": "/cloud_devops",
+      "name": "Cloud/DevOps"
+    }
+  ],
+  "name": "Georges Homsy",
+  "others": [
+    {
+      "bullets": [
+        "Agile Software Development LinkedIn- April 2022",
+        "Microsoft Certified: Data Analyst Associate Microsoft - March 2021",
+        "R Programming Coursera - December 2020",
+        "The Data Scientist’s Toolbox Coursera - November 2020"
+      ],
+      "title": "Certificates"
+    },
+    {
+      "bullets": [
+        "Basketball player",
+        "Choir",
+        "Traveling (Madeira, Spain, Germany, Portugal, Netherlands)"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis Consulting Group",
+      "description": "At Jarvis, we are multiple Scrum teams working on various projects. I am a software and data engineer working in a team of 3 engineers, 1 scrum master, and a product owner. We are implementing multiple projects using multiple technologies such as Bash scripts (Linux), Java, Docker, SQL, RDBMS, Git/Github… As a scrum team, all the software engineers have a daily meeting to track the project’s progress and that we are all aligned in the project. The sprint in Jarvis is a period of two-week. At the end of the sprint, all the team gets together for an informal session to view a demo. The development team showcases the backlog items that are now ‘Done’ to stakeholders and teammates for feedback. The product owner will decide whether or not to release the increment. After that, we have a sprint retroactive meeting conducted by the scrum master, to discuss what happened during the last sprint, tools, people, relationships and what went wrong, and how to improve it.",
+      "duration": "2022-present",
+      "title": "Software Engineer"
+    },
+    {
+      "company": "Université Saint Joseph de Beyrouth",
+      "description": "Worked within the university HR department to improve and maintain the in-house application and third-party software. Designed and developed HR modules and reports using VBA and Microsoft access. Designed and implemented database schema additions, views, and stored procedures on MS SQL database. Worked with complex queries. Analyzed and automated manual HR processes to improve efficiency within the department.",
+      "duration": "2020 - 2022",
+      "title": "Application and SQL developer"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "Docker",
+      "R",
+      "VBA",
+      "Maven",
+      "HTML/CSS"
+    ],
+    "familiar": [
+      "AWS",
+      "NoSQL",
+      "Node.js",
+      "C++",
+      "PL/SQL"
+    ],
+    "proficient": [
+      "Java",
+      "Linux/Bash",
+      "RDBMS/SQL",
+      "Agile/Scrum",
+      "Git/Github"
+    ]
+  },
+  "summary": "Hard-working developer with two years of experience working on Microsoft, PHP, and Java technologies. I have a bachelor’s and master’s degree in Computer Science applied to business management from “Université Saint-Joseph de Beyrouth”. I have worked as an application and SQL developer at the same university in Lebanon. I have joined Jarvis Consulting Group as a software engineer, and I have worked on various projects in a scrum team. These projects help me to learn and become more proficient in technologies like Java, Git, SQL, Linux/Bash, Maven, and Docker. I have a passion for solving difficult problems by finding the most optimized solutions to these problems. I am a team player with an eye for detail and great at multitasking. Keen to learn and master new technologies."
+}
