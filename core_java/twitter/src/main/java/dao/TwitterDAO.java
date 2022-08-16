@@ -69,7 +69,7 @@ public class TwitterDAO implements CrdDao<Tweet,String> {
     return parseResponseBody(httpResponse,HTTP_OK);
   }
 
-  private Tweet parseResponseBody(HttpResponse httpResponse, Integer expectedStatus) {
+  public Tweet parseResponseBody(HttpResponse httpResponse, Integer expectedStatus) {
     Tweet tweet = null;
     try {
       String jsonText;
