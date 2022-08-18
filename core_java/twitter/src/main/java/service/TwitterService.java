@@ -60,10 +60,10 @@ public class TwitterService implements Service {
   }
 
   public boolean validatePostTweet(Tweet t) {
-    boolean exprLong = t.getCoordinates().getCoordinates()[0]  >= LONG_MIN && t.getCoordinates().getCoordinates()[0]  <= LONG_MAX;
-    boolean exprLag = t.getCoordinates().getCoordinates()[1]  >= LAT_MIN && t.getCoordinates().getCoordinates()[1]  <= LAT_MAX;
+//    boolean exprLong = t.getCoordinates().getCoordinates()[0]  >= LONG_MIN && t.getCoordinates().getCoordinates()[0]  <= LONG_MAX;
+//    boolean exprLag = t.getCoordinates().getCoordinates()[1]  >= LAT_MIN && t.getCoordinates().getCoordinates()[1]  <= LAT_MAX;
 
-    if (t.getText().length()  < TWEET_LENGTH && exprLong && exprLag) {
+    if (t.getText().length()  < TWEET_LENGTH) {
       return true;
     } else {
       return false;

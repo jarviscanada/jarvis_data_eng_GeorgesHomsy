@@ -40,14 +40,7 @@ public class TwitterServiceIntTest {
     String mTwitter = "Hellootest" + System.currentTimeMillis();
 //    String mTwitter = "HelloHelloHelloHelloHelloHellHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHellHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHelloHellHelloHelloHello";
 
-    double lat = 40.05701649;
-    double lon = -75.14310264;
-
-    Coordinates coordinates = new Coordinates();
-    coordinates.setCoordinates(new double[] {lon,lat});
-
     t.setText(mTwitter);
-    t.setCoordinates(coordinates);
   }
 
   @Test
