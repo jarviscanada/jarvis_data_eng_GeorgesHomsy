@@ -8,7 +8,10 @@ import java.net.URISyntaxException;
 import ca.jrvs.apps.twitter.modal.Tweet;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class TwitterDAO implements CrdDao<Tweet,String> {
 
   private static final String API_BASE_URI = "https://api.twitter.com";
@@ -24,7 +27,7 @@ public class TwitterDAO implements CrdDao<Tweet,String> {
 
   private HttpHelper hh;
 
-
+  @Autowired
   public TwitterDAO(HttpHelper hh) {
     this.hh = hh;
   }

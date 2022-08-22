@@ -66,7 +66,7 @@ public class TwitterControlerIntTest {
 
   @Test
   public void showTweet() {
-    String[] args = {"show","1559975604841234433"};
+    String[] args = {"show","1561778336359129089"};
 
     Tweet expectedTweet = tc.showTweet(args);
     assertEquals(args[1],expectedTweet.getId().toString());
@@ -74,7 +74,7 @@ public class TwitterControlerIntTest {
 
   @Test
   public void deleteTweet() {
-    String[] args = {"delete","1559997512374800385"};
+    String[] args = {"delete","1561778336359129089"};
 
     List<Tweet> expectedTweetList = tc.deleteTweet(args);
     assertTrue(expectedTweetList.size()==1);

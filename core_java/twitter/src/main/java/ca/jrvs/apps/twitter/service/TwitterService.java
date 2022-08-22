@@ -1,28 +1,31 @@
 package ca.jrvs.apps.twitter.service;
 
+import ca.jrvs.apps.twitter.dao.CrdDao;
 import ca.jrvs.apps.twitter.dao.TwitterDAO;
 import java.util.ArrayList;
 import java.util.List;
 import ca.jrvs.apps.twitter.modal.Tweet;
+import org.springframework.beans.factory.annotation.Autowired;
 
+@org.springframework.stereotype.Service
 public class TwitterService implements Service {
 
-  private TwitterDAO dao;
+  private CrdDao dao;
 
   private static final int TWEET_LENGTH = 140;
   private static final double LONG_MIN = -90.0;
   private static final double LONG_MAX= 90.0;
   private static final double LAT_MIN = -180.0;
   private static final double LAT_MAX = 180.0;
-
-  public TwitterService(TwitterDAO dao) {
+  @Autowired
+  public TwitterService(CrdDao dao) {
     this.dao = dao;
   }
 
   @Override
   public Tweet postTweet(Tweet tweet) {
     if(validatePostTweet(tweet)) {
-      return dao.create(tweet);
+      return (Tweet) dao.create(tweet);
     } else {
       throw new IllegalArgumentException("Invalid tweet format!");
     }
@@ -53,7 +56,7 @@ public class TwitterService implements Service {
     List<Tweet> lTweet = new ArrayList<Tweet>();
     for(String id:ids) {
       if (isValidId(id)) {
-        lTweet.add(dao.deleteById(id));
+        lTweet.add((Tweet) dao.deleteById(id));
       }
     }
     return lTweet;

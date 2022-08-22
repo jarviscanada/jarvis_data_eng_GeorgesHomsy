@@ -50,15 +50,15 @@ public class TwitterServiceIntTest {
 
   @Test
   public void showTweet() {
-    String id = "1559997512374800385";
+    String id = "1561778342910722048";
     String [] var = {"text"};
-    assertEquals(ts.showTweet(id,var).getText(),"Hellootest1660767363051");
+    assertEquals(ts.showTweet(id,var).getText(),"Hellootest1661191947854");
   }
 
   @Test
   public void deleteTweets() {
     List<Tweet> tt = new ArrayList<Tweet>();
-    String[] dId = {"1559976227334676480"};
+    String[] dId = {"1561778342910722048"};
     tt = (ts.deleteTweets(dId));
     assertEquals(tt.get(0).getId_str(),dId[0]);
   }

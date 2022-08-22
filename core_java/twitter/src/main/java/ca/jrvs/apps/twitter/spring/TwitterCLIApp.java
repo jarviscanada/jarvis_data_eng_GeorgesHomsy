@@ -1,4 +1,4 @@
-package ca.jrvs.apps.twitter;
+package ca.jrvs.apps.twitter.spring;
 
 import ca.jrvs.apps.twitter.example.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -9,19 +9,23 @@ import ca.jrvs.apps.twitter.helper.TwitterHttpHelper;
 import ca.jrvs.apps.twitter.modal.Tweet;
 import ca.jrvs.apps.twitter.service.Service;
 import ca.jrvs.apps.twitter.service.TwitterService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TwitterCLIApp {
 
   public static final String USAGE = "USAGE: TwitterApp post|show|delete [other parameters]";
   private Controller controller;
 
+  @Autowired
   public TwitterCLIApp(Controller controller) {
     this.controller = controller;
   }
 
   public static void main(String[] args) {
 
-    args = new String[]{"delete", "1560360575355453447"};
+
 
     String consumerKey = System.getenv("CONSUMER_KEY");
     String consumerSecret = System.getenv("CONSUMER_SECRET");

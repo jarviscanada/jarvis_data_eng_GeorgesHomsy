@@ -30,7 +30,7 @@ public class TwitterDAOIntTest {
     dao = new TwitterDAO(th);
     t = new Tweet();
 
-    String mTwitter = "Hellootest";
+    String mTwitter = "Hellootest"+System.currentTimeMillis();
     double lat = 40.05701649;
     double lon = -75.14310264;
 
@@ -58,13 +58,14 @@ public class TwitterDAOIntTest {
 
   @Test
   public void findById() {
-    Tweet result = dao.findById("1559293366415904772");
-    assertEquals(result.getText(), t.getText());
+    Tweet result = dao.findById("1561778340700241920");
+    assertNotNull(result);
+    assertTrue(result.getText().contains("test"));;
   }
 
   @Test
   public void deleteById() {
-    Tweet result = dao.deleteById("1559239963450941440");
+    Tweet result = dao.deleteById("1561778340700241920");
     assertNotNull(result.getText());
   }
 }
