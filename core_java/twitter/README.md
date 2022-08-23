@@ -23,8 +23,8 @@ To convert `JSON` responses to a `Tweet` object from Twitter APIs I used a `Java
         <p>
       Arguments:
       
-       |   | Argument           | Description |
-       |---|--------------------| -------------------------- |
+  |   | Argument           | Description |
+  |---|--------------------| -------------------------- |
        | 1 | tweet_text         | tweet_text cannot exceed 140 UTF-8 encoded characters |
        | 2 | latitude:longitude | Geo location |
     
@@ -44,7 +44,7 @@ To convert `JSON` responses to a `Tweet` object from Twitter APIs I used a `Java
       Arguments:
     
     |   | Argument           | Description | 
-|---|--------------------| -------------------------- |
+  |---|--------------------| -------------------------- |
     | 1 | tweet_id      | Tweet ID. Same as id_str in the tweet object |
     | 2 | [field1,fields2] | A comma-separated list of top-level fields from the tweet object (similar to SELECT clause in SQL) |
     
@@ -64,7 +64,7 @@ To convert `JSON` responses to a `Tweet` object from Twitter APIs I used a `Java
       Arguments:
 
   |   | Argument  | Description |
-|-----------|--------------------| -------------------------- |
+  |-----------|--------------------| -------------------------- |
   | 1 | tweet_ids | A comma-separated list of tweets |
 
         ```bash
