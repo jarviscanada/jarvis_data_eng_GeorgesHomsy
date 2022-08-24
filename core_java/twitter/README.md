@@ -23,8 +23,8 @@ To convert `JSON` responses to a `Tweet` object from Twitter APIs I used a `Java
         <p>
       Arguments:
       
-  |   | Argument           | Description |
-  |---|--------------------| -------------------------- |
+   |   | Argument           | Description |
+   |---|--------------------| -------------------------- |
        | 1 | tweet_text         | tweet_text cannot exceed 140 UTF-8 encoded characters |
        | 2 | latitude:longitude | Geo location |
     
