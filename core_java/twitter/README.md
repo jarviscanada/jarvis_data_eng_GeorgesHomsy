@@ -133,4 +133,38 @@ In this app, I create 5 modals:
 And all these modals above will represent a tweet object.
 
 ## Spring
-As we mentioned before, that TwitterCLIApp creates 4 objects from differen
+As we mentioned before, that TwitterCLIApp will initiate all 4 classes (TwitterController,TwitterService,TwitterDAO,TwitterHttpHelper) and set up all the main dependencies relationships manually. Spring framework help us to manage all these dependencies without any manual intervention.
+With Spring, I should only define the dependency relationship and IoC (Inversion of Control) will automatically create all dependencies and set up everything for us. There are 2 approaches to define dependency relationships: `@Beans` or `@ComponentScan`. In the first approach (`@Beans`), we should define dependency relationship using `@Bean` and create an IoC container to automatically instantiate all the relationship we specified before. But the problem in this approach is that we still have a lot of manual work. For the second approach `@ComponantScan`, 
+we should only indicate the dependency relationship by only adding to the class `@components` annotation and `@Autowired` to the class constructor to tell IoC container to inject dependency through the constructor. For this application, I implement the second approach by using the `@Controller` for the TwitterController class, the `@Service` for the TwitterService, `@Repository` for the TwitterDAO and finally `@component` for the TwitterHttpHelper. All these previous annotations are stereotypes of `@component`.
+
+## Test
+I applied 2 types of testing in this project:Unit testing and Integration testing. For the integration testing I use the `JUnit4` to test that all components are working correctly. And for the unit testing, I used `Mockito` to test the class without testing dependencies. So, I only create a mock object of the dependency class and pass it to the testing class.
+
+## Deployment
+For the deployment I used `Docker`. I create a docker image of the app, and then I pushed it to Dockerhub for easier distribution.
+
+1. Create the `DockerFile`:
+```bash
+    FROM openjdk:8-alpine
+    ENV CONSUMER_KEY ""
+    ENV CONSUMER_SECRET ""
+    ENV ACCESS_TOKEN ""
+    ENV TOKEN_SECRET ""
+    COPY target/java_apps*.jar /usr/local/app/twitter/lib/twitter.jar
+    ENTRYPOINT ["java","-jar","/usr/local/app/twitter/lib/twitter.jar"]
+```
+2. Build the image using `docker build` command::
+```bash
+   docker build -t {dockerhub_username}/{image name} {path for creation}
+```
+
+3. Push your image to `DockerHub` using `docker push`:
+```bash
+   docker push dockerhub_username}/{image name}
+```
+And now you can go to hub.docker.com and verify your image.
+
+## Improvements
+1. Connect this application to a database, so we can save all the tweets for analyzing purposes.
+2. Try to tag people when we post a tweet.
+3. Upgrade Twitter Rest APIs to version 2.
