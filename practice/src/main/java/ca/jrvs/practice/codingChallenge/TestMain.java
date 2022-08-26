@@ -6,9 +6,9 @@ import sun.awt.X11.XSystemTrayPeer;
 public class TestMain {
 
   public static void main(String[] args) {
-    RotateString rs = new RotateString();
+    ValidParentheses v = new ValidParentheses();
 
-    System.out.println(rs.rotateString("", "cdeab"));
+    System.out.println(v.isValid(""));
 
   }
 }
