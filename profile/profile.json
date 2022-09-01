@@ -30,37 +30,12 @@
     },
     {
       "description": [
-        "Twitter App: ",
+        "Twitter App: Developed an application to manage tweets in other word users can post, show and delete tweets using this application. I used MVC (Model - View - Controller) as design pattern to relate my front end with the back end. On the other hand, I used DAO (Data Access Object) pattern to isolate the business layer from the persistence layer. As a consumer, I used HTTPClient to send and receive requests/responses from the Twitter APIs providers (servers) and Oauth 1.0 as an authorization method using Twitter REST APIs. To convert JSON responses to a Tweet object from Twitter APIs I used a Java library called jackson-databind. I chose Apache Maven as a project management tool which help me to handle all dependencies and the automation of the project's life cycle.JUnit4 and Mockito frameworks used for unit and integration testing. And finally, Docker for deployment.",
         "JDBC App: Developed an application that manages retail store data within a database. In other words, the application is connected through JDBC (Java Database Connection) driver to a Docker instance of Postgres psql. The application is responsible to provide create, read, update and delete (CRUD) functions for data persistence. These operations were implemented by using structural patterns DAO (Data Access Object) and DTO (Data Transfer Object) that allows us to isolate the application layer from the persistence layer using an abstract API.",
         "Grep App: Developed an application that is similar to the grep command of Linux. The Grep command in Linux is used to search text in a given file. This application accepts 3 arguments: path where to search / text to search/path of the output file where all matches are saved. The text to search for could be a letter, word or a regular expression. It goes through files recursively in the directory passed by the user as the first argument and then returns strings that match the input pattern (second argument) and save them in a file passed by the user as third arguments. The application is written in Java8 and I used IntelliJ as an IDE. I use maven as a project management tool which also helps me to handle all dependencies and the automation of the project's life cycle. For the deployment, I used Docker to create a docker image of the app, and then I pushed it to DockerHub for easier distribution. This application was implemented in 2 ways: using the for/loop and using the lambda/Stream API."
       ],
       "git_url": "/core_java",
       "name": "Core Java Apps"
-    },
-    {
-      "description": "",
-      "git_url": "/springboot",
-      "name": "Springboot App"
-    },
-    {
-      "description": "",
-      "git_url": "/python_data_analytics",
-      "name": "Python Data Analytics"
-    },
-    {
-      "description": "",
-      "git_url": "/hadoop",
-      "name": "Hadoop"
-    },
-    {
-      "description": "",
-      "git_url": "/spark",
-      "name": "Spark"
-    },
-    {
-      "description": "",
-      "git_url": "/cloud_devops",
-      "name": "Cloud/DevOps"
     }
   ],
   "name": "Georges Homsy",
